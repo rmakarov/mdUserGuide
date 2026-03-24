@@ -1,0 +1,107 @@
+:root {
+    --main-red-color: #f55951;
+    --main-purple-color: #593f56;
+    --main-bg-color: #fbf4f2;
+    --main-text-color: #000;
+    --main-grey-color: #ccc;
+    --main-white-color: #fff;
+    --main-purple-color--darker: #361d32;
+    --main-red-color--hover: #f88781;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    text-align: left;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+p {
+    margin: 1em 0.25em;
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media only screen and (max-width: 965px) {
+    h1 {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        margin: 1rem 0;
+    }
+
+    p {
+        margin-inline-start: 0em;
+        margin-inline-end: 0em;
+    }
+}
+
+a.link {
+    color: var(--main-red-color);
+    text-decoration: none;
+}
+
+a.link:hover {
+    color: var(--main-red-color--hover);
+    text-decoration: underline;
+}
+
+ol {
+    padding-inline-start: 2em;
+    line-height: 1.5;
+}
+
+ul {
+    padding-inline-start: 2em;
+    line-height: 1.5;
+}
+
+hr {
+    max-width: 980px;
+    border: none;
+    border-top: 1px solid var(--main-grey-color);
+}

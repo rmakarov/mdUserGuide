@@ -1,0 +1,271 @@
+
+
+
+
+header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 2rem;
+}
+
+.tocToggleBtn,
+.tocCloseBtn {
+    display: none !important;
+}
+
+.appLayout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    flex: 0 0 380px;
+    width: 380px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+    background: var(--main-white-color);
+    border-right: 1px solid var(--main-grey-color);
+    z-index: 100;
+}
+
+.tableOfContentContainer {
+    padding: 1rem;
+}
+
+.navList {
+    list-style: none;
+}
+
+.mainContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.imagesBlock {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+header > .logo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+header > .logo > .image {
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    background-color: var(--main-red-color);
+    -webkit-mask: url('../art/logo.svg') no-repeat center / contain;
+    mask: url('../art/logo.svg') no-repeat center / contain;
+}
+
+header .address {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1em 0 0;
+}
+
+.termsTable {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+
+.termsTable td,
+.termsTable th {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid var(--main-text-color);
+}
+
+.termsTable td:first-child,
+.termsTable th:first-child {
+    border-right: 1px solid var(--main-text-color);
+}
+
+.readingContentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    font-size: 1rem;
+    margin: 1rem 2rem;
+}
+
+main section.readingContentItem {
+    width: 100%;
+}
+
+div.mainContent > main > section.readingContentItem:last-of-type {
+    margin-bottom: 4rem;
+}
+
+footer {
+    margin: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+footer.sticky {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid var(--main-grey-color);
+    background-color: var(--main-bg-color);
+    width: calc(100% - 380px);
+}
+
+footer.sticky  > div.footerContentContainer {
+    width: 100%;
+    max-width: 980px;
+    min-height: 60px;
+    padding: 0 1rem;
+}
+
+footer > div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menuButton {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--main-red-color);
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    padding: 0;
+}
+
+.menuItems {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.menuButton:hover {
+    border-color: var(--main-red-color--hover);
+    box-shadow: 0 0 3px 1px var(--main-red-color--hover);
+}
+
+.menuButton:active {
+    transform: scale(0.96);
+}
+
+@media only screen and (max-width: 965px) {
+    .appLayout {
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 85%;
+        max-width: 380px;
+        height: 100vh;
+        transition: left 0.3s ease;
+        overflow-y: auto;
+        box-shadow: 2px 0 12px rgba(0,0,0,0.15);
+    }
+
+    .sidebar.isOpen {
+        left: 0;
+    }
+
+    .tocToggleBtn, .tocCloseBtn {
+        display: block !important;
+    }
+
+    .appLayout.tocOpen::before {
+        opacity: 1;
+        visibility: visible;
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+    }
+
+    body.tocOpen {
+        overflow: hidden;
+    }
+
+    header {
+        margin: 1rem;
+    }
+
+    footer.sticky {
+        width: 100%;
+    }
+
+    footer > div {
+        justify-content: space-around;
+    }
+
+    main {
+        font-size: 1rem;
+        margin: 1rem;
+    }
+
+    main .readingContentItem {
+        padding: 0;
+    }
+
+}
+
+@media only screen and (min-width: 769px) {
+    main .readingContentItem {
+        max-width: 980px;
+        margin: 0 2rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    header .address {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    header .address div {
+        padding: 1em 0 0;
+    }
+
+    .sidebar {
+        width: 85%;
+        max-width: 320px;
+    }
+}
+
+.scrollToTop[hidden],
+.tocToggleBtn[hidden],
+.tocCloseBtn[hidden] {
+    display: none !important;
+}
